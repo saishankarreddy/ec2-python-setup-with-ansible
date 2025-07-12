@@ -1,0 +1,16 @@
+- name: Install Python on EC2 Instances
+  hosts: targets
+  become: yes
+  tasks:
+    - name: Install Python on Amazon Linux (RedHat family)
+      yum:
+        name: python3
+        state: present
+      when: ansible_os_family == "RedHat"
+
+    - name: Install Python on Ubuntu (Debian family)
+      apt:
+        name: python3
+        update_cache: yes
+        state: present
+      when: ansible_os_family == "Debian"
