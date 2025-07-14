@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/your-username/python-install-ansible.git'
+                git 'https://github.com/saishankarreddy/ec2-python-setup-with-ansible.git'
             }
         }
 
